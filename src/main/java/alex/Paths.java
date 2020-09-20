@@ -11,6 +11,9 @@ public class Paths
 	Set<String> cities = new HashSet<String>();
 	Map<String, Set<String>> connectionMap = new HashMap<String, Set<String>>();
 
+	/*
+	 * Reading data from text file amd mapping it in cities and connectionMap data structures. 
+	 */
 	Paths()
 	{
 		String fileName = "city.txt";
@@ -61,6 +64,10 @@ public class Paths
 		catch(Exception e){e.printStackTrace();}
 	}
 
+	/*
+	 * This method check if connection between 2 cities exists.
+	 * It is an infinit recursive loop stopping if connSet1 and connSet2 has intersection.
+	 */
 	public boolean connected(String city1, String city2)
 	{
 		city1 = city1.trim().toLowerCase();
@@ -89,6 +96,9 @@ public class Paths
 		return false;
 	}
 
+	/*
+	 * Returns Set of next layer of nodes.
+	 */
 	Set<String> testConnections(Set<String> found, Set<String> current)
 	{
 		Set<String> res = new HashSet<String>();
