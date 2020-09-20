@@ -11,7 +11,7 @@ public class Paths
 	Set<String> cities = new HashSet<String>();
 	Map<String, Set<String>> connectionMap = new HashMap<String, Set<String>>();
 
-	public Paths()
+	Paths()
 	{
 		String fileName = "classpath:city.txt";
 		try
