@@ -13,12 +13,21 @@ public class Paths
 
 	Paths()
 	{
-		String fileName = "classpath:city.txt";
+		String fileName = "city.txt";
 		try
 		{
-			ClassPathResource cpr = new ClassPathResource(fileName);
-			List<String> list = IOHelper.fileToList(cpr.getInputStream());
-//			List<String> list = IOHelper.fileToList(fileName);
+			List<String> list = null;
+			try
+			{
+				ClassPathResource cpr = new ClassPathResource("classpath:"+fileName);
+				list = IOHelper.fileToList(cpr.getInputStream());
+			}
+			catch(Exception e)
+			{
+				ClassPathResource cpr = new ClassPathResource(fileName);
+				list = IOHelper.fileToList(cpr.getInputStream());
+			}
+
 			for(int i=1; i<list.size(); i++)
 			{
 				String line = list.get(i);
