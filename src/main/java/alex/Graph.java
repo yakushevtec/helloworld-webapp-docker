@@ -47,7 +47,7 @@ public class Graph
 	{
 		Graph graph = new Graph();
 		String path = System.getProperty("java.class.path");
-		graph.loadTree(path+"/com/data.csv");
+		graph.loadTree(path+"/alex/data.csv");
 		graph.parent.showTree();
 	}
 }
