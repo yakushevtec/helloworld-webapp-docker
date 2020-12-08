@@ -8,25 +8,6 @@ The application utilizes Spring Boot as standalone HTTP Web Server running insid
 Git:
 https://github.com/alex-yakushev/helloworld-webapp-docker.git
 
-To test connection run curl or Web Browser URL.
--------------------------------------
-```
-curl -v http://localhost:8080/connected?origin=Boston&destination=Newark
-or
-curl -v http://localhost:8080/connected/Boston/Newark
-Should return yes
-
-curl -v http://localhost:8080/connected?origin=Boston&destination=Philadelphia
-or
-curl -v http://localhost:8080/connected/Boston/Philadelphia
-Should return yes
-
-curl -v http://localhost:8080/connected?origin=Philadelphia&destination=Albany
-or
-curl -v http://localhost:8080/connected/Philadelphia/Albany
-Should return no
-```
-
 To build the jar-file with Apache Maven
 -------------------------------------
 ```

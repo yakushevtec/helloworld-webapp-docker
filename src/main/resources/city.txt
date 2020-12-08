@@ -1,5 +1,0 @@
-City1, City2
-Boston, New York
-Philadelphia, Newark
-Newark, Boston
-Trenton, Albany

@@ -13,35 +13,10 @@ import java.lang.management.ManagementFactory;
 @RequestMapping("")
 public class WSAppController 
 {
-    @Autowired
-    private Paths paths;
-
 	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// z");
 	private static final String version = "0.0.1";
 	private long startTime = System.currentTimeMillis();
 	
-	@RequestMapping(value = "/connected/{origin}/{destination}", method = RequestMethod.GET)
-	public String connected
-	(
-		@PathVariable("origin") String origin
-		, @PathVariable("destination") String destination
-	) 
-	{
-		boolean connected = paths.connected(origin, destination);
-		return connected ? "yes" : "no";
-	}
-
-	@RequestMapping(value = "/connected", method = RequestMethod.GET)
-	public String connectedRequestParameter
-	(
-		@RequestParam(value = "origin", required = true) String origin
-		, @RequestParam(value = "destination", required = true) String destination
-	) 
-	{
-		boolean connected = paths.connected(origin, destination);
-		return connected ? "yes" : "no";
-	}
-
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String helloWorld() 
 	{
